@@ -1,100 +1,113 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
-*/
-/* 
-    Created on : Jun 23, 2025, 8:41:20 PM
-    Author     : Solomzi
-*/
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+/* General reset */
+* {
   margin: 0;
   padding: 0;
-  background: #f4f4f4;
-  color: #333;
+  box-sizing: border-box;
 }
 
-header {
-  background: #333;
-  color: #fff;
-  padding: 0;
+/* Dark theme base */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: #f5f5f5;
+  transition: background-color 0.4s, color 0.4s;
 }
 
+a {
+  color: #00adb5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #eeeeee;
+}
+
+/* Header */
+.banner {
+  background-color: #1e1e1e;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 nav {
-  display: inline;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
 }
-
 nav ul {
   list-style: none;
-  display: inline;
-}
-
-nav ul li {
-  display: inline;
-  margin-left: 20px;
-}
-
-/*nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}*/
-
-/*.hero {
-  padding: 50px 20px;
-  background: #007acc;
-  color: white;
-  text-align: center;
-}*/
-
-section {
-  padding: 40px 20px;
-  background: white;
-  margin: 20px auto;
-  max-width: 800px;
-  border-radius: 8px;
-}
-
-.project {
-  margin-bottom: 20px;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #333;
-  color: white;
-}
-
-.skills-container {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  gap: 1rem;
+  margin-left: auto;
 }
-
-.skill-box {
-  background: #f9f9f9;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.skill-box p {
-  margin: 0 0 8px;
+nav ul li a {
   font-weight: bold;
 }
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #00adb5;
+  cursor: pointer;
+}
 
+/* Sections */
+section {
+  padding: 3rem 2rem;
+  animation: fadeIn 1s ease-in-out;
+}
+.about h1 span {
+  color: #00adb5;
+}
+
+.skills-container .skill-box {
+  margin-bottom: 1rem;
+}
 .progress-bar {
-  background: #ddd;
-  border-radius: 5px;
-  height: 20px;
+  background-color: #333;
+  border-radius: 20px;
   overflow: hidden;
+  height: 20px;
 }
-
 .progress {
-  background: #007acc;
+  background-color: #00adb5;
   height: 100%;
-  transition: width 0.6s ease;
+  transition: width 0.8s ease-in-out;
 }
 
+/* Projects */
+.project {
+  background-color: #1f1f1f;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-left: 5px solid #00adb5;
+  border-radius: 5px;
+}
+
+/* Contact */
+.contact ul li {
+  margin: 0.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  .skills-container, .project, .about, .contact {
+    text-align: center;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
